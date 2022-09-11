@@ -1,0 +1,24 @@
+{
+    "summary": "",
+    "description": "",
+    "get": {
+        "tags": ["Plans"],
+        "summary": "Get all plans",
+        "description": "Get all plans",
+        "operationId": "plans.get-all",
+        "responses": {
+            "200": {
+                "$ref": "../../responses/plan/get-all.json"
+            },
+            "400": {
+                "$ref": "../../responses/api-responses/400.json"
+            },
+            "401": {
+                "$ref": "../../responses/api-responses/401.json"
+            },
+            "403": {
+                "$ref": "../../responses/api-responses/403.json"
+            }
+        }
+    }
+}

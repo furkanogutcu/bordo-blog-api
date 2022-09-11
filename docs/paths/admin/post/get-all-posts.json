@@ -1,0 +1,104 @@
+{
+    "summary": "",
+    "description": "",
+    "get": {
+        "tags": [
+            "Admins"
+        ],
+        "summary": "Get all posts",
+        "description": "Get all posts",
+        "operationId": "admins.posts.get-all",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "parameters": [
+            {
+                "name": "limit",
+                "in": "query",
+                "description": "Maximum tag count (Default: 10)",
+                "schema": {
+                    "type": "number"
+                }
+            },
+            {
+                "name": "page",
+                "in": "query",
+                "description": "Page number (Default: 1)",
+                "schema": {
+                    "type": "number"
+                }
+            },
+            {
+                "in": "query",
+                "name": "props",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "title.eq": {
+                            "type": "string",
+                            "example": "Bordo Blog"
+                        },
+                        "createdAt.eqd": {
+                            "type": "string",
+                            "example": "2023  or  2023-03  or  2023-03-12  or  2023-03-12T18  or  2023-03-12T18:20  or  2023-03-12T18:20:45"
+                        },
+                        "createdAt.gt": {
+                            "type": "string",
+                            "example": "1662361877178"
+                        },
+                        "createdAt.lt": {
+                            "type": "string",
+                            "example": "1662361877178"
+                        },
+                        "createdAt.gte": {
+                            "type": "string",
+                            "example": "1662361877178"
+                        },
+                        "createdAt.lte": {
+                            "type": "string",
+                            "example": "1662361877178"
+                        },
+                        "tags.in": {
+                            "type": "string",
+                            "example": "movie, software"
+                        }
+                    }
+                },
+                "style": "form",
+                "explode": true
+            },
+            {
+                "name": "sortField",
+                "in": "query",
+                "description": "Post field name for sorting",
+                "schema": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "sortOrder",
+                "in": "query",
+                "description": "Sorting number (-1 | 1)",
+                "schema": {
+                    "type": "number"
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "$ref": "../../../responses/post/get-all-posts.json"
+            },
+            "400": {
+                "$ref": "../../../responses/api-responses/400.json"
+            },
+            "401": {
+                "$ref": "../../../responses/api-responses/401.json"
+            },
+            "403": {
+                "$ref": "../../../responses/api-responses/403.json"
+            }
+        }
+    }
+}

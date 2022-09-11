@@ -1,0 +1,13 @@
+{
+    "description": "",
+    "content": {
+        "application/json": {
+            "schema": {
+                "oneOf" : [
+                    {"$ref": "../../schemas/post/get-all-my-posts-with-pagination.json"},
+                    {"$ref": "../../schemas/post/get-all-my-posts.json"}
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "summary": "",
+    "description": "",
+    "get": {
+        "tags": ["Plans"],
+        "summary": "Get plan by planId",
+        "description": "Get plan by planId",
+        "operationId": "plans.get",
+        "parameters": [
+            {
+                "$ref": "../../parameters/path/plan/plan_id.json"
+            }
+        ],
+        "responses": {
+            "200": {
+                "$ref": "../../responses/plan/get.json"
+            },
+            "400": {
+                "$ref": "../../responses/api-responses/400.json"
+            },
+            "401": {
+                "$ref": "../../responses/api-responses/401.json"
+            },
+            "403": {
+                "$ref": "../../responses/api-responses/403.json"
+            },
+            "404": {
+                "$ref": "../../responses/api-responses/404.json"
+            }
+        }
+    }
+}

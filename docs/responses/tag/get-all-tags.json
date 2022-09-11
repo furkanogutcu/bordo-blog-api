@@ -1,0 +1,17 @@
+{
+    "description": "",
+    "content": {
+        "application/json": {
+            "schema": {
+                "oneOf": [
+                    {
+                        "$ref": "../../schemas/tag/get-all-tags-with-pagination.json"
+                    },
+                    {
+                        "$ref": "../../schemas/tag/get-all-tags.json"
+                    }
+                ]
+            }
+        }
+    }
+}

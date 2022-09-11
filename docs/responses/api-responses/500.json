@@ -1,0 +1,23 @@
+{
+    "description": "Internal server error",
+    "content": {
+        "application/json": {
+            "schema": {
+                "allOf": [
+                    {
+                        "$ref": "./api-error.json"
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "statusCode": {
+                                "type": "number",
+                                "default": 500
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

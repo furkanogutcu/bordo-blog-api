@@ -1,0 +1,46 @@
+{
+    "summary": "",
+    "description": "",
+    "get": {
+        "tags": ["Users"],
+        "summary": "Verify email",
+        "description": "Verify email",
+        "operationId": "users.verify.email",
+        "parameters": [
+            {
+                "$ref": "../../parameters/path/user/email-verify-token.json"
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Email verification successfully",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "../../responses/api-responses/api-success.json"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "statusCode": {
+                                            "type": "number",
+                                            "default": 200
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "400": {
+                "$ref": "../../responses/api-responses/400.json"
+            },
+            "500": {
+                "$ref": "../../responses/api-responses/500.json"
+            }
+        }
+    }
+}

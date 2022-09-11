@@ -1,0 +1,76 @@
+{
+    "summary": "",
+    "description": "",
+    "get": {
+        "tags": [
+            "Admins"
+        ],
+        "summary": "Get post by id",
+        "description": "Get post by id",
+        "operationId": "admins.posts.get-post-by-id",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "parameters": [
+            {
+                "$ref": "../../../parameters/path/post/post_id.json"
+            }
+        ],
+        "responses": {
+            "200": {
+                "$ref": "../../../responses/post/get-post-by-id.json"
+            },
+            "400": {
+                "$ref": "../../../responses/api-responses/400.json"
+            },
+            "401": {
+                "$ref": "../../../responses/api-responses/401.json"
+            },
+            "403": {
+                "$ref": "../../../responses/api-responses/403.json"
+            },
+            "404": {
+                "$ref": "../../../responses/api-responses/404.json"
+            }
+        }
+    },
+    "summary": "",
+    "description": "",
+    "delete": {
+        "tags": [
+            "Admins"
+        ],
+        "summary": "Delete user's post",
+        "description": "Delete user's post",
+        "operationId": "admin.posts.delete",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "parameters": [
+            {
+                "$ref": "../../../parameters/path/post/post_id.json"
+            }
+        ],
+        "responses": {
+            "200": {
+                "$ref": "../../../responses/post/delete-users-post.json"
+            },
+            "400": {
+                "$ref": "../../../responses/api-responses/400.json"
+            },
+            "401": {
+                "$ref": "../../../responses/api-responses/401.json"
+            },
+            "403": {
+                "$ref": "../../../responses/api-responses/403.json"
+            },
+            "404": {
+                "$ref": "../../../responses/api-responses/404.json"
+            }
+        }
+    }
+}

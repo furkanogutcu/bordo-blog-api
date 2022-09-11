@@ -1,0 +1,24 @@
+{
+    "allOf": [
+        {
+            "$ref": "../../responses/api-responses/api-success.json"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "statusCode": {
+                    "type": "number",
+                    "default": 200
+                }
+            }
+        },
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "./other/tokens.json"
+                }
+            }
+        }
+    ]
+}

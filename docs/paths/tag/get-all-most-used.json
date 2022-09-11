@@ -1,0 +1,34 @@
+{
+    "summary": "",
+    "description": "",
+    "get": {
+        "tags": ["Tags"],
+        "summary": "Get all most used tags",
+        "description": "Get all most used tags",
+        "operationId": "tags.get-all-most-used-tags",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "parameters": [
+            {
+                "$ref": "../../parameters/path/tag/count.json"
+            }
+        ],
+        "responses": {
+            "200": {
+                "$ref": "../../responses/tag/get-all-most-used-tags.json"
+            },
+            "400": {
+                "$ref": "../../responses/api-responses/400.json"
+            },
+            "401": {
+                "$ref": "../../responses/api-responses/401.json"
+            },
+            "403": {
+                "$ref": "../../responses/api-responses/403.json"
+            }
+        }
+    }
+}

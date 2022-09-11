@@ -1,0 +1,201 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "version": "v1",
+        "title": "Bordo-Blog API",
+        "description": "Blog Management API",
+        "contact": {},
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "servers": [
+        {
+            "url": "https://bordo-blog.herokuapp.com/api/v1",
+            "description": "Web server"
+        },
+        {
+            "url": "http://localhost:3000/api/v1",
+            "description": "Local server"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Users",
+            "description": "User endpoints"
+        },
+        {
+            "name": "Tags",
+            "description": "Tag endpoints"
+        },
+        {
+            "name": "Posts",
+            "description": "Post endpoints"
+        },
+        {
+            "name": "Addresses",
+            "description": "Address endpoints"
+        },
+        {
+            "name": "Plans",
+            "description": "Plan endpoints"
+        },
+        {
+            "name": "Admins",
+            "description": "Endpoints for admins only"
+        }
+    ],
+    "paths": {
+        "/users/profile": {
+            "$ref": "./paths/user/profile.json"
+        },
+        "/users/login": {
+            "$ref": "./paths/user/login.json"
+        },
+        "/users/register": {
+            "$ref": "./paths/user/register.json"
+        },
+        "/users/emails/email-change": {
+            "$ref": "./paths/user/change-email-get-email.json"
+        },
+        "/users/emails/password-reset": {
+            "$ref": "./paths/user/get-password-reset-email.json"
+        },
+        "/users/emails/email-verification": {
+            "$ref": "./paths/user/get-email-verification-email.json"
+        },
+        "/users/redirects/change-email/{changeEmailToken}": {
+            "$ref": "./paths/user/change-email.json"
+        },
+        "/users/redirects/verify-email/{emailVerifyToken}": {
+            "$ref": "./paths/user/verify-email.json"
+        },
+        "/users/logout": {
+            "$ref": "./paths/user/logout.json"
+        },
+        "/users/upload-avatar": {
+            "$ref": "./paths/user/upload-avatar.json"
+        },
+        "/users/password-reset": {
+            "$ref": "./paths/user/reset-password.json"
+        },
+        "/users/password-change": {
+            "$ref": "./paths/user/change-password.json"
+        },
+        "/users/admin/": {
+            "$ref": "./paths/admin/user/get-all.json"
+        },
+        "/users/admin/{userId}": {
+            "$ref": "./paths/admin/user/get.json"
+        },
+        "/users/admin/assign/{userId}": {
+            "$ref": "./paths/admin/user/assign-admin.json"
+        },
+        "/tags/": {
+            "$ref": "./paths/tag/get-all-tags.json"
+        },
+        "/tags/most-used/{count}": {
+            "$ref": "./paths/tag/get-all-most-used.json"
+        },
+        "/tags/admin": {
+            "$ref": "./paths/admin/tag/create-tag.json"
+        },
+        "/tags/admin/{tagId}": {
+            "$ref": "./paths/admin/tag/delete-tag.json"
+        },
+        "/posts/my": {
+            "$ref": "./paths/post/get-all-my-post.json"
+        },
+        "/posts/my/{postId}": {
+            "$ref": "./paths/post/get-my-post-by-id.json"
+        },
+        "/posts/previews": {
+            "$ref": "./paths/post/get-all-previews.json"
+        },
+        "/posts": {
+            "$ref": "./paths/post/create-post.json"
+        },
+        "/posts/{postId}": {
+            "$ref": "./paths/post/update-post.json"
+        },
+        "/posts/add-view/{postId}": {
+            "$ref": "./paths/post/add-view.json"
+        },
+        "/posts/{postId}/likes": {
+            "$ref": "./paths/post/change-like-status.json"
+        },
+        "/posts/{postId}/comments": {
+            "$ref": "./paths/post/add-comment.json"
+        },
+        "/posts/admin/": {
+            "$ref": "./paths/admin/post/get-all-posts.json"
+        },
+        "/posts/admin/{postId}": {
+            "$ref": "./paths/admin/post/get-post-by-id.json"
+        },
+        "/addresses/countries": {
+            "$ref": "./paths/address/get-all-country.json"
+        },
+        "/addresses/{countryId}/cities": {
+            "$ref": "./paths/address/get-all-city.json"
+        },
+        "/addresses/{cityId}/districts": {
+            "$ref": "./paths/address/get-all-district.json"
+        },
+        "/addresses": {
+            "$ref": "./paths/address/get-all-my.json"
+        },
+        "/addresses/{addressId}": {
+            "$ref": "./paths/address/get-my.json"
+        },
+        "/plans": {
+            "$ref": "./paths/plan/get-all.json"
+        },
+        "/plans/{planId}": {
+            "$ref": "./paths/plan/get.json"
+        },
+        "/plans/admin/": {
+            "$ref": "./paths/admin/plan/create.json"
+        },
+        "/plans/admin/{planId}": {
+            "$ref": "./paths/admin/plan/update.json"
+        }
+    },
+    "components": {
+        "requestBodies": {
+            "login": {
+                "$ref": "./request-bodies/user/login.json"
+            },
+            "register": {
+                "$ref": "./request-bodies/user/register.json"
+            },
+            "get-password-reset-email": {
+                "$ref": "./request-bodies/user/get-password-reset-email.json"
+            },
+            "get-email-verification-email": {
+                "$ref": "./request-bodies/user/get-email-verification-email.json"
+            },
+            "reset-password": {
+                "$ref": "./request-bodies/user/reset-password.json"
+            },
+            "change-password": {
+                "$ref": "./request-bodies/user/change-password.json"
+            },
+            "create-tag": {
+                "$ref": "./request-bodies/admin/tag/create-tag.json"
+            },
+            "create-post": {
+                "$ref": "./request-bodies/post/create-post.json"
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "description": "JWT Authorization header using the Bearer scheme.",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
+}

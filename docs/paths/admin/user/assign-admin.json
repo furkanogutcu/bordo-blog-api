@@ -1,0 +1,125 @@
+{
+    "summary": "",
+    "description": "",
+    "post": {
+        "tags": [
+            "Admins"
+        ],
+        "summary": "Assign admin role to users",
+        "description": "Assign admin role to users",
+        "operationId": "admin.users.assign-admin",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "parameters": [
+            {
+                "$ref": "../../../parameters/path/user/user_id.json"
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "../../../responses/api-responses/api-success.json"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "statusCode": {
+                                            "type": "number",
+                                            "default": 200
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "400": {
+                "$ref": "../../../responses/api-responses/400.json"
+            },
+            "401": {
+                "$ref": "../../../responses/api-responses/401.json"
+            },
+            "403": {
+                "$ref": "../../../responses/api-responses/403.json"
+            },
+            "404": {
+                "$ref": "../../../responses/api-responses/404.json"
+            },
+            "409": {
+                "$ref": "../../../responses/api-responses/409.json"
+            },
+            "500": {
+                "$ref": "../../../responses/api-responses/500.json"
+            }
+        }
+    },
+    "summary": "",
+    "description": "",
+    "delete": {
+        "tags": [
+            "Admins"
+        ],
+        "summary": "UnAssign admin role to admins",
+        "description": "UnAssign admin role to admins",
+        "operationId": "admin.users.unassign-admin",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "parameters": [
+            {
+                "$ref": "../../../parameters/path/user/user_id.json"
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "../../../responses/api-responses/api-success.json"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "statusCode": {
+                                            "type": "number",
+                                            "default": 200
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "400": {
+                "$ref": "../../../responses/api-responses/400.json"
+            },
+            "401": {
+                "$ref": "../../../responses/api-responses/401.json"
+            },
+            "403": {
+                "$ref": "../../../responses/api-responses/403.json"
+            },
+            "404": {
+                "$ref": "../../../responses/api-responses/404.json"
+            },
+            "500": {
+                "$ref": "../../../responses/api-responses/500.json"
+            }
+        }
+    }
+}

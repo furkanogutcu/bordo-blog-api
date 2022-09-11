@@ -1,0 +1,48 @@
+{
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "../../../responses/api-responses/data-response-base.json"
+        },
+        {
+            "$ref": "./first-name-last-name.json"
+        },
+        {
+            "$ref": "./avatar.json"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "last_login": {
+                    "title": "User Last Login",
+                    "description": "User Last Login",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "title": "User email address",
+                    "description": "User email address",
+                    "type": "string",
+                    "format": "email"
+                },
+                "email_verified": {
+                    "title": "User's email is verified?",
+                    "description": "User's email is verified?",
+                    "type": "boolean",
+                    "default": "true"
+                },
+                "email_notification": {
+                    "title": "User is subscribed the email notification?",
+                    "description": "User's email is verified?",
+                    "type": "boolean",
+                    "default": "true"
+                }
+            }
+        }
+    ]
+}
